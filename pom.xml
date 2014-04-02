@@ -176,6 +176,17 @@
             </modules>
         </profile>
         <profile>
+            <id>bundle</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>extras</module>
+                <module>tools</module>
+                <module>repositories</module>
+            </modules>
+        </profile>
+        <profile>
             <id>1.5</id>
             <modules>
                 <module>platforms</module>
