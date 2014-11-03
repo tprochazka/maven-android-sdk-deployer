@@ -19,7 +19,7 @@ Contributors (historical order..):
 - Lorenzo Villani - initial 4.0 support
 - Paul Merlin http://eskatos.github.com - Google Analytics extra
 - Matteo Panella <morpheus@level28.org> - Google AdMobs extra, support for 4.1
-- Benoit Billington https://github.com/Shusshu Google Cloud Messaging Client and Server, annotations.jar, 4.2, 4.3, 4.4, APK Expansion, Licensing, 4.4W, L
+- Benoit Billington https://github.com/Shusshu Google Cloud Messaging Client and Server, annotations.jar, 4.2, 4.3, 4.4, APK Expansion, Licensing, 4.4W, L, 5.0, MultiDex
 - Michael Lake https://github.com/mlake support for Javadoc attachment for platforms
 - Nic Strong http://www.codepoets.co.nz Google Play Services (gms)
 - Matias Dumrauf http://github.com/mdumrauf - Compatibility v7 library support, Google Analytics support for V1 and V2
@@ -43,6 +43,7 @@ Contributors (historical order..):
 - Dieter Adriaenssens https://github.com/ruleant
 - Quentin Rousseau https://github.com/kwent
 - Mingfai Ma https://github.com/mingfai
+- Raphael Ackermann https://github.com/rtack sdk 21 fix for apklibs
 
 The Maven Android SDK Deployer is a helper maven project that can be
 used to install the libraries necessary to build Android applications
@@ -115,8 +116,8 @@ To install only a certain sdk level use
     mvn install -P 4.2
     mvn install -P 4.3
     mvn install -P 4.4
-	mvn install -P 4.4W
-	mvn install -P L
+    mvn install -P 4.4W
+    mvn install -P 5.0
 
 As a result you should find the android.jar and maps.jar and a number of other
 libraries in your users local repository (~/.m2/repository/) and you can therefore
@@ -184,42 +185,42 @@ For the core platforms
 <dependency>
   <groupId>android</groupId>
   <artifactId>android</artifactId>
-  <version>4.0_r3</version>
+  <version>4.0_r4</version>
   <scope>provided</scope>
 </dependency>
 
 <dependency>
   <groupId>android</groupId>
   <artifactId>android</artifactId>
-  <version>4.0.3_r3</version>
+  <version>4.0.3_r5</version>
   <scope>provided</scope>
 </dependency>
 
 <dependency>
   <groupId>android</groupId>
   <artifactId>android</artifactId>
-  <version>4.1.2_r4</version>
+  <version>4.1.2_r5</version>
   <scope>provided</scope>
 </dependency>
 
 <dependency>
   <groupId>android</groupId>
   <artifactId>android</artifactId>
-  <version>4.2.2_r2</version>
+  <version>4.2.2_r3</version>
   <scope>provided</scope>
 </dependency>
 
 <dependency>
   <groupId>android</groupId>
   <artifactId>android</artifactId>
-  <version>4.3_r2</version>
+  <version>4.3.1_r3</version>
   <scope>provided</scope>
 </dependency>
 
 <dependency>
   <groupId>android</groupId>
   <artifactId>android</artifactId>
-  <version>4.4.2_r3</version>
+  <version>4.4.2_r4</version>
   <scope>provided</scope>
 </dependency>
 
@@ -233,7 +234,7 @@ For the core platforms
 <dependency>
   <groupId>android</groupId>
   <artifactId>android</artifactId>
-  <version>L_r1</version>
+  <version>5.0_r1</version>
   <scope>provided</scope>
 </dependency>
 ```
@@ -427,7 +428,7 @@ If you find that the above `<dependency>` fails due to conflicts, your project a
 
 If you have problems with `<exclude>`, another option is to override the `<groupid>`, `<artifactid>`, and `<version>` properties used by the deployer to match Google's published library.
 
-Use one of the following `<dependency>` instead of those shown above. From version 20.0.0 the support-v4 & v7 are packaged as aar instead of jar
+Use one of the following `<dependency>` instead of those shown above. From version 20.0.0 the support-v4 & v13 are packaged as aar instead of jar
 
 ```xml
     <dependency>
