@@ -160,9 +160,6 @@
     <profiles>
         <profile>
             <id>all</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <modules>
                 <module>platforms</module>
                 <module>add-ons</module>
@@ -173,10 +170,14 @@
             </modules>
         </profile>
         <profile>
+            <id>gradle</id>
+            <modules>
+                <module>extras</module>
+                <module>repositories</module>
+            </modules>
+        </profile>
+        <profile>
             <id>bundle</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <modules>
                 <module>extras</module>
                 <module>tools</module>
